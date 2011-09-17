@@ -25,7 +25,7 @@ public class Launcher
 					throw new Exception();
 				}
 				// copy file
-				System.out.println("Please wait while downloading test" + fileName + " :) ...");
+				System.out.println("Please wait while downloading " + fileName + " :) ...");
 				writeFile = new FileOutputStream(file);
 				InputStream input = connection.getInputStream();
 				byte[] buffer = new byte[10240];
