@@ -5,6 +5,8 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.Scanner;
 
+import javax.swing.JFrame;
+
 //######################################################################################## Launcher
 public class Launcher
 {
@@ -54,6 +56,7 @@ public class Launcher
 	//------------------------------------------------------------------------------------------ main
 	public static void main(String [] args)
 	{
+		new LauncherWindows();
 		boolean done = false;
 		System.out.println("Minecraft Version Chooser version 1.0 by Cannabeuh & Tickleman");
 		System.out.println("-------------------------");
