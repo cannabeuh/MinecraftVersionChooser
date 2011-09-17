@@ -1,7 +1,10 @@
 import java.awt.Color;
-import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.Image;
+import java.io.File;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.JPanel;
  
 public class LauncherWindowsContent extends JPanel {
@@ -15,17 +18,21 @@ public class LauncherWindowsContent extends JPanel {
 	   w = launcherWindows;
    }
 public void paintComponent(Graphics g){
-     	g.setColor(Color.RED);  
 		height = w.getWindowsHeight();
 		width = w.getWindowsWidth();
-		headerwidth=width-100;
-		contentwidth=width-50;
+		headerwidth=width-60;
+		contentwidth=width-45;
 		contentheight=height-120;
-        g.fillRoundRect((width-(headerwidth+10))/2, 10, headerwidth, 50, 10, 10);
-        g.fillRoundRect((width-(contentwidth+10))/2, 70, contentwidth, contentheight, 10, 10);
-		Font font = new Font("Courier", Font.BOLD, 20);
-	 	g.setFont(font);
-     	g.setColor(Color.BLUE);          
-     	g.drawString("Minecraft Switcher", width/2, 30);
+		g.fillRoundRect((width-(headerwidth+5))/2, 10, headerwidth, 50, 10, 10);
+        g.fillRoundRect((width-(contentwidth+5))/2, 70, contentwidth, contentheight, 10, 10);
+		Image img;
+		try {
+			img = ImageIO.read(new File("header.png"));
+			g.drawImage(img, width-headerwidth, 10, this);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
    }               
 }

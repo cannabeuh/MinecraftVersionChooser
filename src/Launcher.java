@@ -5,8 +5,6 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.Scanner;
 
-import javax.swing.JFrame;
-
 //######################################################################################## Launcher
 public class Launcher
 {
