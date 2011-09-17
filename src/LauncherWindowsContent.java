@@ -1,10 +1,8 @@
-import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.Image;
-import java.io.File;
-import java.io.IOException;
+import java.awt.BorderLayout;
+import java.awt.Dimension;
 
-import javax.imageio.ImageIO;
+import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
  
 public class LauncherWindowsContent extends JPanel {
@@ -14,25 +12,21 @@ public class LauncherWindowsContent extends JPanel {
 	int headerwidth;
 	int contentwidth;
 	int contentheight;
+	JButton bouton173 = new JButton("Launch Minecraft 1.7.3");
+	JButton bouton181 = new JButton("Launch Minecraft 1.8.1");
+	JLabel labelheader = new JLabel("Choose version of minecraft");
+
    public LauncherWindowsContent(LauncherWindows launcherWindows) {
 	   w = launcherWindows;
-   }
-public void paintComponent(Graphics g){
-		height = w.getWindowsHeight();
-		width = w.getWindowsWidth();
-		headerwidth=width-60;
-		contentwidth=width-45;
-		contentheight=height-120;
-		g.fillRoundRect((width-(headerwidth+5))/2, 10, headerwidth, 50, 10, 10);
-        g.fillRoundRect((width-(contentwidth+5))/2, 70, contentwidth, contentheight, 10, 10);
-		Image img;
-		try {
-			img = ImageIO.read(new File("header.png"));
-			g.drawImage(img, width-headerwidth, 10, this);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-   }               
+       JPanel south = new JPanel();
+       JPanel headers = new JPanel();
+       headers.setSize(50 , 50);
+       headers.add(labelheader);
+       south.add(bouton173);
+       south.add(bouton181);
+       headers.setPreferredSize( new Dimension( 600, 50));
+       south.setPreferredSize( new Dimension( 600, 110));
+       this.add(headers,BorderLayout.NORTH);
+       this.add(south,BorderLayout.SOUTH);
+   }              
 }
